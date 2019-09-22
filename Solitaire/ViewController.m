@@ -7,6 +7,8 @@
 //
 
 #import "ViewController.h"
+#import "Card.h"
+#import "Deck.h"
 
 @interface ViewController ()
 
@@ -17,6 +19,16 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
+
+    NSLog(@"Before shuffle:");
+    Deck* deck1 = [[Deck alloc] init];
+    NSLog([deck1 description]);
+    
+    [deck1 shuffle];
+    
+    NSLog(@"After shuffle:");
+    NSLog([deck1 description]);
+
 }
 
 

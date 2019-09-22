@@ -13,6 +13,8 @@
 		D71D10CC2336F5260073B6A7 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D71D10CB2336F5260073B6A7 /* Assets.xcassets */; };
 		D71D10CF2336F5260073B6A7 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D71D10CD2336F5260073B6A7 /* LaunchScreen.storyboard */; };
 		D71D10D22336F5260073B6A7 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = D71D10D12336F5260073B6A7 /* main.m */; };
+		D71D10DA2336F5480073B6A7 /* Card.m in Sources */ = {isa = PBXBuildFile; fileRef = D71D10D92336F5480073B6A7 /* Card.m */; };
+		D71D10DD2336F9BF0073B6A7 /* Deck.m in Sources */ = {isa = PBXBuildFile; fileRef = D71D10DC2336F9BF0073B6A7 /* Deck.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -26,6 +28,10 @@
 		D71D10CE2336F5260073B6A7 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		D71D10D02336F5260073B6A7 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		D71D10D12336F5260073B6A7 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		D71D10D82336F5480073B6A7 /* Card.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Card.h; sourceTree = "<group>"; };
+		D71D10D92336F5480073B6A7 /* Card.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Card.m; sourceTree = "<group>"; };
+		D71D10DB2336F9BF0073B6A7 /* Deck.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Deck.h; sourceTree = "<group>"; };
+		D71D10DC2336F9BF0073B6A7 /* Deck.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Deck.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -62,6 +68,10 @@
 				D71D10C32336F5250073B6A7 /* AppDelegate.m */,
 				D71D10C52336F5250073B6A7 /* ViewController.h */,
 				D71D10C62336F5250073B6A7 /* ViewController.m */,
+				D71D10D82336F5480073B6A7 /* Card.h */,
+				D71D10D92336F5480073B6A7 /* Card.m */,
+				D71D10DB2336F9BF0073B6A7 /* Deck.h */,
+				D71D10DC2336F9BF0073B6A7 /* Deck.m */,
 				D71D10C82336F5250073B6A7 /* Main.storyboard */,
 				D71D10CB2336F5260073B6A7 /* Assets.xcassets */,
 				D71D10CD2336F5260073B6A7 /* LaunchScreen.storyboard */,
@@ -141,9 +151,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D71D10DD2336F9BF0073B6A7 /* Deck.m in Sources */,
 				D71D10C72336F5250073B6A7 /* ViewController.m in Sources */,
 				D71D10D22336F5260073B6A7 /* main.m in Sources */,
 				D71D10C42336F5250073B6A7 /* AppDelegate.m in Sources */,
+				D71D10DA2336F5480073B6A7 /* Card.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
