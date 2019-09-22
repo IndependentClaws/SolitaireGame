@@ -16,6 +16,10 @@ NS_ASSUME_NONNULL_BEGIN
 @property (strong,atomic) NSString* rank;
 @property (strong,atomic) NSNumber* pointValue;
 
+-(NSNumber*)pointValue;
+-(NSString*)rank;
+-(NSString*)suit;
+
 -(id)initWithRank:(NSString*)rank andWithSuit:(NSString*)suit andWithPointValue:(NSNumber*)pointValue;
 
 -(BOOL)isEqual:(Card*)otherCard;

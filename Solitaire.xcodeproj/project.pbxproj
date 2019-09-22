@@ -15,6 +15,9 @@
 		D71D10D22336F5260073B6A7 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = D71D10D12336F5260073B6A7 /* main.m */; };
 		D71D10DA2336F5480073B6A7 /* Card.m in Sources */ = {isa = PBXBuildFile; fileRef = D71D10D92336F5480073B6A7 /* Card.m */; };
 		D71D10DD2336F9BF0073B6A7 /* Deck.m in Sources */ = {isa = PBXBuildFile; fileRef = D71D10DC2336F9BF0073B6A7 /* Deck.m */; };
+		D71D10E0233718120073B6A7 /* CardCell.m in Sources */ = {isa = PBXBuildFile; fileRef = D71D10DF233718120073B6A7 /* CardCell.m */; };
+		D71D10E32337183D0073B6A7 /* BoardController.m in Sources */ = {isa = PBXBuildFile; fileRef = D71D10E22337183D0073B6A7 /* BoardController.m */; };
+		D71D10E623371A920073B6A7 /* CardViewModel.m in Sources */ = {isa = PBXBuildFile; fileRef = D71D10E523371A920073B6A7 /* CardViewModel.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -32,6 +35,12 @@
 		D71D10D92336F5480073B6A7 /* Card.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Card.m; sourceTree = "<group>"; };
 		D71D10DB2336F9BF0073B6A7 /* Deck.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Deck.h; sourceTree = "<group>"; };
 		D71D10DC2336F9BF0073B6A7 /* Deck.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Deck.m; sourceTree = "<group>"; };
+		D71D10DE233718120073B6A7 /* CardCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CardCell.h; sourceTree = "<group>"; };
+		D71D10DF233718120073B6A7 /* CardCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CardCell.m; sourceTree = "<group>"; };
+		D71D10E12337183D0073B6A7 /* BoardController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BoardController.h; sourceTree = "<group>"; };
+		D71D10E22337183D0073B6A7 /* BoardController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BoardController.m; sourceTree = "<group>"; };
+		D71D10E423371A920073B6A7 /* CardViewModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CardViewModel.h; sourceTree = "<group>"; };
+		D71D10E523371A920073B6A7 /* CardViewModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CardViewModel.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -65,6 +74,12 @@
 			isa = PBXGroup;
 			children = (
 				D71D10C22336F5250073B6A7 /* AppDelegate.h */,
+				D71D10E12337183D0073B6A7 /* BoardController.h */,
+				D71D10E22337183D0073B6A7 /* BoardController.m */,
+				D71D10E423371A920073B6A7 /* CardViewModel.h */,
+				D71D10E523371A920073B6A7 /* CardViewModel.m */,
+				D71D10DE233718120073B6A7 /* CardCell.h */,
+				D71D10DF233718120073B6A7 /* CardCell.m */,
 				D71D10C32336F5250073B6A7 /* AppDelegate.m */,
 				D71D10C52336F5250073B6A7 /* ViewController.h */,
 				D71D10C62336F5250073B6A7 /* ViewController.m */,
@@ -151,9 +166,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D71D10E623371A920073B6A7 /* CardViewModel.m in Sources */,
+				D71D10E32337183D0073B6A7 /* BoardController.m in Sources */,
 				D71D10DD2336F9BF0073B6A7 /* Deck.m in Sources */,
 				D71D10C72336F5250073B6A7 /* ViewController.m in Sources */,
 				D71D10D22336F5260073B6A7 /* main.m in Sources */,
+				D71D10E0233718120073B6A7 /* CardCell.m in Sources */,
 				D71D10C42336F5250073B6A7 /* AppDelegate.m in Sources */,
 				D71D10DA2336F5480073B6A7 /* Card.m in Sources */,
 			);

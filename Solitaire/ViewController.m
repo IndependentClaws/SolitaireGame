@@ -9,6 +9,7 @@
 #import "ViewController.h"
 #import "Card.h"
 #import "Deck.h"
+#import "CardViewModel.h"
 
 @interface ViewController ()
 
@@ -20,14 +21,12 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view.
 
-    NSLog(@"Before shuffle:");
-    Deck* deck1 = [[Deck alloc] init];
-    NSLog([deck1 description]);
+    Card* aCard = [[Card alloc] initWithRank:@"K" andWithSuit:@"Hearts" andWithPointValue:[NSNumber numberWithInt:13]];
     
-    [deck1 shuffle];
+    CardViewModel* viewModel = [[CardViewModel alloc] initWith:aCard];
+    UIImage* image = [viewModel cardImage];
     
-    NSLog(@"After shuffle:");
-    NSLog([deck1 description]);
+    NSLog(@"Image info: %@",[image description]);
 
 }
 

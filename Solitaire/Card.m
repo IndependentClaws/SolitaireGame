@@ -25,6 +25,19 @@
     return self;
 }
 
+
+-(NSNumber*)pointValue{
+    return _pointValue;
+}
+
+-(NSString*)rank{
+    return _rank;
+}
+
+-(NSString*)suit{
+    return _suit;
+}
+
 -(BOOL)isEqual:(Card*)otherCard{
     
     return otherCard.rank == _rank && otherCard.suit == _suit && otherCard.pointValue.integerValue == _pointValue.integerValue;
