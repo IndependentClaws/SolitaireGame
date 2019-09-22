@@ -23,6 +23,12 @@ NS_ASSUME_NONNULL_BEGIN
 -(id)initWithRank:(NSString*)rank andWithSuit:(NSString*)suit andWithPointValue:(NSNumber*)pointValue;
 
 -(BOOL)isEqual:(Card*)otherCard;
+-(int)rankIntegerValue;
+
+-(BOOL)isQueen;
+-(BOOL)isKing;
+-(BOOL)isJack;
+-(BOOL)isAce;
 
 @end
 

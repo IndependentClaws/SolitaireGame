@@ -70,6 +70,8 @@
         }
         
         [self shuffle];
+        _topCardIndex = [_cards count] - 1;
+
     }
     
     return self;
@@ -91,7 +93,7 @@
         }
         
         [self shuffle];
-
+        _topCardIndex = [_cards count] - 1;
     }
     
     return self;

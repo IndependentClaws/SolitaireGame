@@ -16,6 +16,12 @@
 
 @implementation CardCell
 
+-(void)configureWith:(CardViewModel*)viewModel{
+    UIImage* cardImage = [viewModel cardImage];
+    
+    self.imageView.image = cardImage;
+}
+
 +(NSString*)identifier{
     return @"CardCell";
 }

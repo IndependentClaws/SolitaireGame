@@ -18,6 +18,8 @@
 		D71D10E0233718120073B6A7 /* CardCell.m in Sources */ = {isa = PBXBuildFile; fileRef = D71D10DF233718120073B6A7 /* CardCell.m */; };
 		D71D10E32337183D0073B6A7 /* BoardController.m in Sources */ = {isa = PBXBuildFile; fileRef = D71D10E22337183D0073B6A7 /* BoardController.m */; };
 		D71D10E623371A920073B6A7 /* CardViewModel.m in Sources */ = {isa = PBXBuildFile; fileRef = D71D10E523371A920073B6A7 /* CardViewModel.m */; };
+		D7C5F09A2337264700E3AF06 /* Board.m in Sources */ = {isa = PBXBuildFile; fileRef = D7C5F0992337264700E3AF06 /* Board.m */; };
+		D7C5F09D23372A0600E3AF06 /* GameViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D7C5F09C23372A0600E3AF06 /* GameViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -41,6 +43,10 @@
 		D71D10E22337183D0073B6A7 /* BoardController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BoardController.m; sourceTree = "<group>"; };
 		D71D10E423371A920073B6A7 /* CardViewModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CardViewModel.h; sourceTree = "<group>"; };
 		D71D10E523371A920073B6A7 /* CardViewModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CardViewModel.m; sourceTree = "<group>"; };
+		D7C5F0982337264700E3AF06 /* Board.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Board.h; sourceTree = "<group>"; };
+		D7C5F0992337264700E3AF06 /* Board.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Board.m; sourceTree = "<group>"; };
+		D7C5F09B23372A0600E3AF06 /* GameViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GameViewController.h; sourceTree = "<group>"; };
+		D7C5F09C23372A0600E3AF06 /* GameViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = GameViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -76,6 +82,8 @@
 				D71D10C22336F5250073B6A7 /* AppDelegate.h */,
 				D71D10E12337183D0073B6A7 /* BoardController.h */,
 				D71D10E22337183D0073B6A7 /* BoardController.m */,
+				D7C5F0982337264700E3AF06 /* Board.h */,
+				D7C5F0992337264700E3AF06 /* Board.m */,
 				D71D10E423371A920073B6A7 /* CardViewModel.h */,
 				D71D10E523371A920073B6A7 /* CardViewModel.m */,
 				D71D10DE233718120073B6A7 /* CardCell.h */,
@@ -83,6 +91,8 @@
 				D71D10C32336F5250073B6A7 /* AppDelegate.m */,
 				D71D10C52336F5250073B6A7 /* ViewController.h */,
 				D71D10C62336F5250073B6A7 /* ViewController.m */,
+				D7C5F09B23372A0600E3AF06 /* GameViewController.h */,
+				D7C5F09C23372A0600E3AF06 /* GameViewController.m */,
 				D71D10D82336F5480073B6A7 /* Card.h */,
 				D71D10D92336F5480073B6A7 /* Card.m */,
 				D71D10DB2336F9BF0073B6A7 /* Deck.h */,
@@ -166,12 +176,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D7C5F09D23372A0600E3AF06 /* GameViewController.m in Sources */,
 				D71D10E623371A920073B6A7 /* CardViewModel.m in Sources */,
 				D71D10E32337183D0073B6A7 /* BoardController.m in Sources */,
 				D71D10DD2336F9BF0073B6A7 /* Deck.m in Sources */,
 				D71D10C72336F5250073B6A7 /* ViewController.m in Sources */,
 				D71D10D22336F5260073B6A7 /* main.m in Sources */,
 				D71D10E0233718120073B6A7 /* CardCell.m in Sources */,
+				D7C5F09A2337264700E3AF06 /* Board.m in Sources */,
 				D71D10C42336F5250073B6A7 /* AppDelegate.m in Sources */,
 				D71D10DA2336F5480073B6A7 /* Card.m in Sources */,
 			);
