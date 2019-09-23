@@ -13,7 +13,12 @@ NS_ASSUME_NONNULL_BEGIN
 
 @interface Deck : NSObject
 
+
+//MARK: - Initializers
+
 -(id)init;
+-(id)initWithDeck:(Deck*)otherDeck;
+-(id)initWithCards:(NSArray<Card*>*)cards;
 -(id)initWithRanks:(NSArray<NSString*>*)ranks andWithSuits: (NSArray<NSString*>*)suits andWithPointValues: (NSArray<NSNumber *>*)pointValues;
 
 
@@ -22,7 +27,7 @@ NS_ASSUME_NONNULL_BEGIN
 
 -(unsigned long)size;
 -(BOOL)isEmpty;
-
+-(BOOL)isEqual:(Deck*)otherDeck;
 
 +(NSArray<Card*>*)performPerfectShuffle:(NSArray<Card*>*)cards;
 +(NSArray<Card*>*)performEfficentInsertionShuffle:(NSArray<Card*>*)cards;

@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14490.70" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14490.70" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="aX9-8N-QvX">
     <device id="retina6_1" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
@@ -23,7 +23,85 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="sK2-NM-epz" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-1146" y="149"/>
+            <point key="canvasLocation" x="-1997" y="-7"/>
+        </scene>
+        <!--Board Controller-->
+        <scene sceneID="rwE-OG-95Q">
+            <objects>
+                <collectionViewController id="YHS-mj-Jj2" customClass="BoardController" sceneMemberID="viewController">
+                    <collectionView key="view" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" id="JQI-I2-Lqz">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <inset key="scrollIndicatorInsets" minX="10" minY="10" maxX="10" maxY="10"/>
+                        <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="5" id="Jwd-jH-L4Q">
+                            <size key="itemSize" width="140" height="190"/>
+                            <size key="headerReferenceSize" width="0.0" height="100"/>
+                            <size key="footerReferenceSize" width="0.0" height="100"/>
+                            <inset key="sectionInset" minX="20" minY="20" maxX="20" maxY="20"/>
+                        </collectionViewFlowLayout>
+                        <cells>
+                            <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="CardCell" id="4Jv-6M-uMc" customClass="CardCell">
+                                <rect key="frame" x="20" y="120" width="140" height="190"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO">
+                                    <rect key="frame" x="0.0" y="0.0" width="140" height="190"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="cardHearts10" translatesAutoresizingMaskIntoConstraints="NO" id="tfc-ny-zrc">
+                                            <rect key="frame" x="0.0" y="0.0" width="140" height="190"/>
+                                        </imageView>
+                                    </subviews>
+                                </view>
+                                <constraints>
+                                    <constraint firstItem="tfc-ny-zrc" firstAttribute="centerX" secondItem="4Jv-6M-uMc" secondAttribute="centerX" id="2XE-yt-NwS"/>
+                                    <constraint firstItem="tfc-ny-zrc" firstAttribute="centerY" secondItem="4Jv-6M-uMc" secondAttribute="centerY" id="df7-Xg-ICx"/>
+                                </constraints>
+                                <connections>
+                                    <outlet property="imageView" destination="tfc-ny-zrc" id="eFh-ew-CE3"/>
+                                </connections>
+                            </collectionViewCell>
+                        </cells>
+                        <collectionReusableView key="sectionHeaderView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="3AX-FU-50k">
+                            <rect key="frame" x="0.0" y="0.0" width="414" height="100"/>
+                            <autoresizingMask key="autoresizingMask"/>
+                            <subviews>
+                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Select Cards" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Fes-mm-m2b">
+                                    <rect key="frame" x="141" y="35.5" width="132" height="29"/>
+                                    <fontDescription key="fontDescription" type="system" pointSize="24"/>
+                                    <color key="textColor" red="0.76470588240000004" green="0.25882352939999997" blue="0.25882352939999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                    <nil key="highlightedColor"/>
+                                </label>
+                            </subviews>
+                            <constraints>
+                                <constraint firstItem="Fes-mm-m2b" firstAttribute="centerY" secondItem="3AX-FU-50k" secondAttribute="centerY" id="ANl-5W-kiE"/>
+                                <constraint firstItem="Fes-mm-m2b" firstAttribute="centerX" secondItem="3AX-FU-50k" secondAttribute="centerX" id="At5-K9-WHe"/>
+                            </constraints>
+                        </collectionReusableView>
+                        <collectionReusableView key="sectionFooterView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="w3i-cM-igg">
+                            <rect key="frame" x="0.0" y="330" width="414" height="100"/>
+                            <autoresizingMask key="autoresizingMask"/>
+                            <subviews>
+                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="l5t-pB-4Uz">
+                                    <rect key="frame" x="157" y="29.5" width="100" height="41"/>
+                                    <fontDescription key="fontDescription" type="system" pointSize="24"/>
+                                    <state key="normal" title="Next Turn"/>
+                                </button>
+                            </subviews>
+                            <constraints>
+                                <constraint firstItem="l5t-pB-4Uz" firstAttribute="centerX" secondItem="w3i-cM-igg" secondAttribute="centerX" id="PKS-oY-IEb"/>
+                                <constraint firstItem="l5t-pB-4Uz" firstAttribute="centerY" secondItem="w3i-cM-igg" secondAttribute="centerY" id="gJf-dG-4RW"/>
+                            </constraints>
+                        </collectionReusableView>
+                        <connections>
+                            <outlet property="dataSource" destination="YHS-mj-Jj2" id="GdU-fX-g9H"/>
+                            <outlet property="delegate" destination="YHS-mj-Jj2" id="vrd-5P-tl7"/>
+                        </connections>
+                    </collectionView>
+                </collectionViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="4ji-kg-jzu" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-1458" y="495"/>
         </scene>
         <!--Game View Controller-->
         <scene sceneID="tne-QT-ifu">
@@ -34,10 +112,9 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="qpA-Hp-zQE">
-                                <rect key="frame" x="87" y="346" width="240" height="210"/>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <rect key="frame" x="20.5" y="348" width="373" height="210"/>
+                                <color key="backgroundColor" red="1" green="0.83234566450000003" blue="0.47320586440000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
-                                    <constraint firstAttribute="width" constant="240" id="5M3-7b-FSp"/>
                                     <constraint firstAttribute="height" constant="210" id="DlH-zw-y4J"/>
                                 </constraints>
                                 <collectionViewFlowLayout key="collectionViewLayout" scrollDirection="horizontal" minimumLineSpacing="10" minimumInteritemSpacing="10" id="yF5-th-7yZ">
@@ -47,7 +124,7 @@
                                     <inset key="sectionInset" minX="5" minY="5" maxX="5" maxY="5"/>
                                 </collectionViewFlowLayout>
                                 <cells>
-                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="CardCell" id="Joa-Wr-Qz5" customClass="CardCell">
+                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="GameCardCell" id="Joa-Wr-Qz5" customClass="GameCardCell">
                                         <rect key="frame" x="5" y="10" width="140" height="190"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO">
@@ -65,10 +142,14 @@
                                             <constraint firstItem="Jsf-Bz-DVg" firstAttribute="centerY" secondItem="Joa-Wr-Qz5" secondAttribute="centerY" id="nec-Ls-5NN"/>
                                         </constraints>
                                         <connections>
-                                            <outlet property="imageView" destination="Jsf-Bz-DVg" id="TRn-vh-opM"/>
+                                            <outlet property="imageView" destination="Jsf-Bz-DVg" id="JmW-8b-CA3"/>
                                         </connections>
                                     </collectionViewCell>
                                 </cells>
+                                <connections>
+                                    <outlet property="dataSource" destination="BYZ-38-t0r" id="flJ-JD-UgC"/>
+                                    <outlet property="delegate" destination="BYZ-38-t0r" id="xQK-oY-Kfy"/>
+                                </connections>
                             </collectionView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Choose cards:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8zr-UV-kfN">
                                 <rect key="frame" x="152" y="94" width="110.5" height="21"/>
@@ -77,11 +158,12 @@
                                 <nil key="highlightedColor"/>
                             </label>
                         </subviews>
-                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <color key="backgroundColor" red="0.70157517619999998" green="0.95689307639999999" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstItem="8zr-UV-kfN" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="50" id="98V-dv-BxE"/>
                             <constraint firstItem="qpA-Hp-zQE" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="Ows-UQ-BSF"/>
-                            <constraint firstItem="qpA-Hp-zQE" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" constant="3" id="wLG-Y1-YE2"/>
+                            <constraint firstItem="qpA-Hp-zQE" firstAttribute="width" secondItem="8bC-Xf-vdC" secondAttribute="width" multiplier="0.9" id="gic-qs-dZY"/>
+                            <constraint firstItem="qpA-Hp-zQE" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" constant="5" id="wLG-Y1-YE2"/>
                             <constraint firstItem="8zr-UV-kfN" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="xGT-xT-6ZI"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
@@ -92,7 +174,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-351" y="84"/>
+            <point key="canvasLocation" x="-3167" y="-25"/>
         </scene>
     </scenes>
     <resources>

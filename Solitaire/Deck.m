@@ -16,6 +16,9 @@
 @property (readonly) BOOL isEmpty;
 @property (readwrite) unsigned long topCardIndex;
 
+@property (copy) NSMutableArray<Card*>*(^generator)(void);
+
+
 @end
 
 @implementation Deck
@@ -27,7 +30,13 @@
     self = [super init];
     
     if(self){
-        _cards = otherDeck.cards;
+        
+        _generator = ^{
+            return otherDeck.cards;
+        };
+        
+        _cards = _generator();
+        
         [self shuffle];
     }
     
@@ -40,7 +49,13 @@
     self = [super init];
     
     if(self){
-        _cards = cards;
+        
+        _generator = ^{
+            return [NSMutableArray arrayWithArray:cards];
+        };
+        
+        _cards = _generator();
+        
         [self shuffle];
     }
     
@@ -54,22 +69,31 @@
     
     if(self){
         
-        
-        int pointValue = 1;
-        _cards = [[NSMutableArray alloc] init];
-        
-        for(NSString* rank in [Deck GetDefaultRanks]){
-            for(NSString* suit in [Deck GetDefaultSuits]){
-                
-                Card* newCard = [[Card alloc] initWithRank:rank andWithSuit:suit andWithPointValue:[NSNumber numberWithInt:pointValue]];
-                [_cards addObject:newCard];
-                
-            }
-            pointValue += 1;
 
-        }
+        _generator = ^{
+            
+            
+            int pointValue = 1;
+            NSMutableArray<Card*>*cards = [[NSMutableArray alloc] init];
+            
+            for(NSString* rank in [Deck GetDefaultRanks]){
+                for(NSString* suit in [Deck GetDefaultSuits]){
+                    
+                    Card* newCard = [[Card alloc] initWithRank:rank andWithSuit:suit andWithPointValue:[NSNumber numberWithInt:pointValue]];
+                    [cards addObject:newCard];
+                    
+                }
+                pointValue += 1;
+
+            }
+            
+            return cards;
+        };
+        
+        _cards = _generator();
         
         [self shuffle];
+        
         _topCardIndex = [_cards count] - 1;
 
     }
@@ -83,14 +107,24 @@
     self = [super init];
     
     if(self){
-        for(int i = 0; i < [ranks count]; i++){
-            for(int j = 0; j < [suits count]; j++){
+        
+        _generator = ^{
+            
+            NSMutableArray<Card*>* cards = [[NSMutableArray alloc] init];
+            
+            for(int i = 0; i < [ranks count]; i++){
+                for(int j = 0; j < [suits count]; j++){
                 
                 Card* card = [[Card alloc] initWithRank:[ranks objectAtIndex:i] andWithSuit:[suits objectAtIndex:j] andWithPointValue:[pointValues objectAtIndex:i]];
                 
-                [_cards addObject:card];
+                    [cards addObject:card];
+                }
             }
-        }
+            
+            return cards;
+        };
+        
+        _cards = _generator();
         
         [self shuffle];
         _topCardIndex = [_cards count] - 1;
@@ -98,6 +132,29 @@
     
     return self;
 }
+
+-(BOOL)isEqual:(Deck*)otherDeck{
+    
+    NSMutableArray<Card*>* currentDeckCards = self.generator();
+    NSMutableArray<Card*>* otherDeckCards = otherDeck.generator();
+    
+    if(currentDeckCards.count != otherDeckCards.count){
+        return NO;
+    }
+    
+    for(int i = 0; i < currentDeckCards.count; i++){
+        Card* currentDeckCard = [currentDeckCards objectAtIndex:i];
+        Card* otherDeckCard = [otherDeckCards objectAtIndex:i];
+        
+        if(![currentDeckCard isEqual:otherDeckCard]){
+            return NO;
+        }
+    }
+    
+    return YES;
+    
+}
+
 
 -(unsigned long)size{
     return [_cards count];

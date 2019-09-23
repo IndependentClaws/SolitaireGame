@@ -18,6 +18,7 @@
 		D71D10E0233718120073B6A7 /* CardCell.m in Sources */ = {isa = PBXBuildFile; fileRef = D71D10DF233718120073B6A7 /* CardCell.m */; };
 		D71D10E32337183D0073B6A7 /* BoardController.m in Sources */ = {isa = PBXBuildFile; fileRef = D71D10E22337183D0073B6A7 /* BoardController.m */; };
 		D71D10E623371A920073B6A7 /* CardViewModel.m in Sources */ = {isa = PBXBuildFile; fileRef = D71D10E523371A920073B6A7 /* CardViewModel.m */; };
+		D79C3F752338AB130039A663 /* GameCardCell.m in Sources */ = {isa = PBXBuildFile; fileRef = D79C3F742338AB130039A663 /* GameCardCell.m */; };
 		D7C5F09A2337264700E3AF06 /* Board.m in Sources */ = {isa = PBXBuildFile; fileRef = D7C5F0992337264700E3AF06 /* Board.m */; };
 		D7C5F09D23372A0600E3AF06 /* GameViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D7C5F09C23372A0600E3AF06 /* GameViewController.m */; };
 /* End PBXBuildFile section */
@@ -43,6 +44,8 @@
 		D71D10E22337183D0073B6A7 /* BoardController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BoardController.m; sourceTree = "<group>"; };
 		D71D10E423371A920073B6A7 /* CardViewModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CardViewModel.h; sourceTree = "<group>"; };
 		D71D10E523371A920073B6A7 /* CardViewModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CardViewModel.m; sourceTree = "<group>"; };
+		D79C3F732338AB130039A663 /* GameCardCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GameCardCell.h; sourceTree = "<group>"; };
+		D79C3F742338AB130039A663 /* GameCardCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = GameCardCell.m; sourceTree = "<group>"; };
 		D7C5F0982337264700E3AF06 /* Board.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Board.h; sourceTree = "<group>"; };
 		D7C5F0992337264700E3AF06 /* Board.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Board.m; sourceTree = "<group>"; };
 		D7C5F09B23372A0600E3AF06 /* GameViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GameViewController.h; sourceTree = "<group>"; };
@@ -80,19 +83,12 @@
 			isa = PBXGroup;
 			children = (
 				D71D10C22336F5250073B6A7 /* AppDelegate.h */,
-				D71D10E12337183D0073B6A7 /* BoardController.h */,
-				D71D10E22337183D0073B6A7 /* BoardController.m */,
-				D7C5F0982337264700E3AF06 /* Board.h */,
+				D79C3F722338AAEE0039A663 /* UICollectionViewCell */,
+				D79C3F762338AEBE0039A663 /* ViewControllers */,
+				D79C3F772338AEDB0039A663 /* ViewModels */,
 				D7C5F0992337264700E3AF06 /* Board.m */,
-				D71D10E423371A920073B6A7 /* CardViewModel.h */,
-				D71D10E523371A920073B6A7 /* CardViewModel.m */,
-				D71D10DE233718120073B6A7 /* CardCell.h */,
-				D71D10DF233718120073B6A7 /* CardCell.m */,
+				D7C5F0982337264700E3AF06 /* Board.h */,
 				D71D10C32336F5250073B6A7 /* AppDelegate.m */,
-				D71D10C52336F5250073B6A7 /* ViewController.h */,
-				D71D10C62336F5250073B6A7 /* ViewController.m */,
-				D7C5F09B23372A0600E3AF06 /* GameViewController.h */,
-				D7C5F09C23372A0600E3AF06 /* GameViewController.m */,
 				D71D10D82336F5480073B6A7 /* Card.h */,
 				D71D10D92336F5480073B6A7 /* Card.m */,
 				D71D10DB2336F9BF0073B6A7 /* Deck.h */,
@@ -104,6 +100,39 @@
 				D71D10D12336F5260073B6A7 /* main.m */,
 			);
 			path = Solitaire;
+			sourceTree = "<group>";
+		};
+		D79C3F722338AAEE0039A663 /* UICollectionViewCell */ = {
+			isa = PBXGroup;
+			children = (
+				D71D10DE233718120073B6A7 /* CardCell.h */,
+				D71D10DF233718120073B6A7 /* CardCell.m */,
+				D79C3F732338AB130039A663 /* GameCardCell.h */,
+				D79C3F742338AB130039A663 /* GameCardCell.m */,
+			);
+			path = UICollectionViewCell;
+			sourceTree = "<group>";
+		};
+		D79C3F762338AEBE0039A663 /* ViewControllers */ = {
+			isa = PBXGroup;
+			children = (
+				D71D10E12337183D0073B6A7 /* BoardController.h */,
+				D71D10E22337183D0073B6A7 /* BoardController.m */,
+				D71D10C52336F5250073B6A7 /* ViewController.h */,
+				D71D10C62336F5250073B6A7 /* ViewController.m */,
+				D7C5F09B23372A0600E3AF06 /* GameViewController.h */,
+				D7C5F09C23372A0600E3AF06 /* GameViewController.m */,
+			);
+			path = ViewControllers;
+			sourceTree = "<group>";
+		};
+		D79C3F772338AEDB0039A663 /* ViewModels */ = {
+			isa = PBXGroup;
+			children = (
+				D71D10E423371A920073B6A7 /* CardViewModel.h */,
+				D71D10E523371A920073B6A7 /* CardViewModel.m */,
+			);
+			path = ViewModels;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -183,6 +212,7 @@
 				D71D10C72336F5250073B6A7 /* ViewController.m in Sources */,
 				D71D10D22336F5260073B6A7 /* main.m in Sources */,
 				D71D10E0233718120073B6A7 /* CardCell.m in Sources */,
+				D79C3F752338AB130039A663 /* GameCardCell.m in Sources */,
 				D7C5F09A2337264700E3AF06 /* Board.m in Sources */,
 				D71D10C42336F5250073B6A7 /* AppDelegate.m in Sources */,
 				D71D10DA2336F5480073B6A7 /* Card.m in Sources */,

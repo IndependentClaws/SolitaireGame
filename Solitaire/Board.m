@@ -15,27 +15,26 @@
 
 @property (atomic,strong) Deck* deck;
 @property NSMutableArray<Card*>* faceUpCards;
-@property NSMutableArray<Card*>* selectedCards;
-@property (readonly) int maxNumberOfFaceUpCards;
+@property int maxNumberOfBoardCards;
 
 @end
 
 
 @implementation Board
 
--(id)init{
+-(id)initWithMaximumNumberOfBoardCards:(int)maxNumberOfBoardCards{
     
     self = [super init];
     
     if(self){
         _deck = [[Deck alloc] init];
         _faceUpCards = [[NSMutableArray alloc] init];
-        _selectedCards = [[NSMutableArray alloc] init];
-
+        _maxNumberOfBoardCards = maxNumberOfBoardCards;
         
     }
     
     [self initializeBoard];
+    
     return self;
 }
 
@@ -45,32 +44,36 @@
 
 -(void)initializeBoard{
     
-    for(int i = 0; i < self.maxNumberOfFaceUpCards; i++){
+    for(int i = 0; i < _maxNumberOfBoardCards; i++){
         Card* card = [_deck deal];
         [_faceUpCards addObject:card];
     }
 }
 
--(BOOL)isLegal{
-    return [self containsJQK] || [self containsPairSum11];
+-(BOOL)isLegal:(NSArray<NSNumber*>*)indices{
+    return [self containsJQK:indices] || [self containsPairSum11:indices];
 }
 
--(BOOL)containsPairSum11{
+-(BOOL)containsPairSum11:(NSArray<NSNumber*>*)indices{
     
-    if([_selectedCards count] != 2){
+    NSArray<Card*>* selectedCards = [self getSelectedCardsFor:indices];
+
+    if([selectedCards count] != 2){
         return NO;
     }
     
-    int firstCardRankValue = [[_selectedCards firstObject] rankIntegerValue];
-    int secondCardRankValue = [[_selectedCards lastObject] rankIntegerValue];
+    int firstCardRankValue = [[selectedCards firstObject] rankIntegerValue];
+    int secondCardRankValue = [[selectedCards lastObject] rankIntegerValue];
     
     return (firstCardRankValue + secondCardRankValue == 11);
 
 }
 
--(BOOL)containsJQK{
+-(BOOL)containsJQK:(NSArray<NSNumber*>*)indices{
     
-    for(Card*card in _selectedCards){
+    NSArray<Card*>* selectedCards = [self getSelectedCardsFor:indices];
+    
+    for(Card*card in selectedCards){
         if(!([card isJack] || [card isKing] || [card isQueen])){
             return NO;
         }
@@ -79,49 +82,52 @@
     return YES;
 }
 
+-(NSArray<Card*>*)getSelectedCardsFor:(NSArray<NSNumber*>*)indices{
+    NSMutableArray<Card*>* selectedCards = [[NSMutableArray alloc] init];
+    
+    for(NSNumber* index in indices){
+        Card* card = [_faceUpCards objectAtIndex:index.integerValue];
+        [selectedCards addObject:card];
+    }
+    
+    return [[NSArray alloc] initWithArray:selectedCards];
+}
+
 -(BOOL)anotherPlayIsPossible{
-    return YES;
+    
+    int numberOfJKQ = 0;
+    
+    for(Card*card in _faceUpCards){
+        if(card.isKing || card.isQueen || card.isJack){
+            numberOfJKQ += 1;
+        }
+    }
+    
+    int numberOfPairsSum11 = 0;
+    
+    for(int i = self.faceUpCards.count-1; i > 0; i--){
+        for(int j = 0; j < i; j++){
+            int rankVal1 = [self.faceUpCards objectAtIndex:i].rankIntegerValue;
+            int rankVal2 = [self.faceUpCards objectAtIndex:j].rankIntegerValue;
+            
+                if(rankVal1 + rankVal2 == 11){
+                    numberOfPairsSum11 += 1;
+                }
+            
+            }
+        }
+    
+
+    
+    return (numberOfPairsSum11 > 0)||(numberOfJKQ >= 3);
 }
 
 
--(NSInteger)numberOfSectionsInCollectionView:(UICollectionView *)collectionView{
-    return 1;
-}
 
-
-//MARK: -   UICollectionView Delegate Methods
-
--(void)collectionView:(UICollectionView *)collectionView willDisplayCell:(UICollectionViewCell *)cell forItemAtIndexPath:(NSIndexPath *)indexPath{
+-(Card*)boardCardAtIndexPath:(NSIndexPath*)indexPath{
     
-}
-
--(void)collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath{
+    return [self.faceUpCards objectAtIndex:indexPath.row];
     
-}
-
--(void)collectionView:(UICollectionView *)collectionView didDeselectItemAtIndexPath:(NSIndexPath *)indexPath{
-    
-}
-
-//MARK: -   DataSource Methods
-
--(NSInteger)collectionView:(UICollectionView *)collectionView numberOfItemsInSection:(NSInteger)section{
-    return self.faceUpCards.count;
-}
-
--(UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath{
-    
-    CardCell* cell = (CardCell*)[collectionView dequeueReusableCellWithReuseIdentifier:[CardCell identifier] forIndexPath:indexPath];
-    
-    
-    Card* card = [self.faceUpCards objectAtIndex:indexPath.row];
-    NSLog(@"Card obtained from faceUpCards: %@",[card description]);
-    
-    CardViewModel* viewModel = [[CardViewModel alloc] initWith:card];
-    
-    [cell configureWith:viewModel];
-    
-    return cell;
 }
 
 @end

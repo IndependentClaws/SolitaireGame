@@ -8,12 +8,15 @@
 
 #import <Foundation/Foundation.h>
 #import <UIKit/UIKit.h>
+#import "Card.h"
 
 NS_ASSUME_NONNULL_BEGIN
 
 @interface Board : NSObject <UICollectionViewDataSource,UICollectionViewDelegate>
 
--(id)init;
+-(id)initWithMaximumNumberOfBoardCards:(int)maxNumberOfBoardCards;
+@property (readonly) int maxNumberOfBoardCards;
+-(Card*)boardCardAtIndexPath:(NSIndexPath*)indexPath;
 
 @end
 

@@ -10,7 +10,7 @@
 
 NS_ASSUME_NONNULL_BEGIN
 
-@interface GameViewController : UIViewController
+@interface GameViewController : UIViewController<UICollectionViewDelegate,UICollectionViewDataSource>
 
 @end
 

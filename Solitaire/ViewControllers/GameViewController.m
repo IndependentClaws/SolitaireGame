@@ -7,7 +7,7 @@
 //
 
 #import "GameViewController.h"
-#import "CardCell.h"
+#import "GameCardCell.h"
 #import "Board.h"
 
 
@@ -23,9 +23,7 @@
 -(void)viewWillLayoutSubviews{
     [super viewWillLayoutSubviews];
     
-    [self.boardCollectionView setDataSource:self.board];
-    [self.boardCollectionView setDelegate:self.board];
-    
+ 
     
 }
 
@@ -33,12 +31,10 @@
     [super viewDidLoad];
     
     self.board = [[Board alloc] init];
-    [self.boardCollectionView registerClass:[CardCell class] forCellWithReuseIdentifier:[CardCell identifier]];
+    
+    [self.boardCollectionView registerClass:[GameCardCell class] forCellWithReuseIdentifier:[GameCardCell identifier]];
    
-    // Do any additional setup after loading the view.
-    [self.boardCollectionView reloadData];
-   
-    [self.boardCollectionView reloadData];
+  
     NSLog(@"Collection View Info: %@",[_boardCollectionView description]);
     NSLog(@"Number of visible cells: %d",[[_boardCollectionView visibleCells] count]);
 }
@@ -52,6 +48,39 @@
     // Pass the selected object to the new view controller.
 }
 */
+
+
+-(NSInteger)numberOfSectionsInCollectionView:(UICollectionView *)collectionView{
+    return 1;
+}
+
+
+-(NSInteger)collectionView:(UICollectionView *)collectionView numberOfItemsInSection:(NSInteger)section{
+    return self.board.maxNumberOfBoardCards;
+}
+
+-(UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath{
+    
+    GameCardCell* cell = (GameCardCell*)[collectionView dequeueReusableCellWithReuseIdentifier:[GameCardCell identifier] forIndexPath:indexPath];
+    
+    
+    Card* card = [self.board boardCardAtIndexPath:indexPath];
+    
+    CardViewModel* viewModel = [[CardViewModel alloc] initWith:card];
+    
+    [cell configureWith:viewModel];
+    
+    [cell setHidden:NO];
+    
+    if(cell){
+        NSLog(@"Information about cell %@",[cell description]);
+
+    } else {
+        NSLog(@"The cell is nil");
+    }
+    
+    return cell;
+}
 
 
 @end
